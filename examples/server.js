@@ -27,6 +27,9 @@ router.get('/simple/get', (req, res) => {
         msg: 'nice'
     })
 })
+router.get('/base/get', (req, res) => {
+    res.json(req.query)
+})
 app.use(router)
 
 const prot = process.env.PROT || 8080
