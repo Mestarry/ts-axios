@@ -7,4 +7,7 @@ axios({
         a: 1,
         b: 2
     }
+}).then(res => {
+  console.log(res)
+  console.log(new Date(res.headers.date))
 })
