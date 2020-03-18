@@ -30,6 +30,25 @@ router.get('/simple/get', (req, res) => {
 router.get('/base/get', (req, res) => {
     res.json(req.query)
 })
+
+router.get('/error/get', (req, res) => {
+  if (Math.random() > 0.5) {
+    res.json({
+      msg: 'good'
+    })
+  } else {
+    res.status(500)
+    res.end()
+  }
+})
+
+router.get('/error/timeout', (req, res) => {
+  setTimeout ( function(){
+    res.json({
+      msg: 'good'
+    })
+  }, 3000)
+})
 app.use(router)
 
 const prot = process.env.PROT || 8080

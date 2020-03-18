@@ -6,4 +6,6 @@ axios({
     params: {
         foo: ['asd', 'asd']
     }
+}).then(res => {
+  console.log(res)
 })
